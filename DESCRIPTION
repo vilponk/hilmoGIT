@@ -1,6 +1,6 @@
 Package: hilmoGIT
 Type: Package
-Title: Hilmo helper functions to hange the HILMO data more easily
+Title: Hilmo package
 Version: 0.1.0
 Author: Ville Ponkilainen
 Maintainer: Ville Ponkilainen <ville.ponkilainen@tuni.fi>
