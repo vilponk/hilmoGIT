@@ -9,7 +9,7 @@
 
 Hilmo_import_sav <- function(filename) {
 
-  library(dplyr)
+  library(tidyverse)
   library(haven)
 
   data <- read_sav(filename)
