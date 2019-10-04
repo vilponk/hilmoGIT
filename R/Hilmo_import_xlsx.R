@@ -13,7 +13,7 @@
 Hilmo_import_xlsx <- function(filename) {
 
   library(readxl)
-  library(dplyr)
+  library(tidyverse)
 
   data <- read_excel(filename)
 
