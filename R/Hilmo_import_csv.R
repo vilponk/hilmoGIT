@@ -11,7 +11,7 @@
 
 Hilmo_import_csv <- function(filename) {
 
-  library(dplyr)
+  library(tidyverse)
 
   data <- read_delim(filename,";", escape_double = FALSE, trim_ws = TRUE)
 
