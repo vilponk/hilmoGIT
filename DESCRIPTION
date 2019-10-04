@@ -1,11 +1,12 @@
 Package: hilmoGIT
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Hilmo helper functions to hange the HILMO data more easily
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Ville Ponkilainen
+Maintainer: Ville Ponkilainen <ville.ponkilainen@tuni.fi>
+Description: This package contains three functions to import cleaned data (csv, sav, xlsx)
+    Tho functions to transform the data from long to wide format (tidy)
+    Requires 'tidyverse' package to be used
+License: Not Applicaple
 Encoding: UTF-8
 LazyData: true
