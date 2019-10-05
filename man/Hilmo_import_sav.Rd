@@ -10,7 +10,10 @@ Hilmo_import_sav(filename)
 \item{filename}{the name of your file you wish to import}
 }
 \description{
-This function allows you to import sav files in more tidy format and it creates ID column from lahtopaiva and tnro
+This function allows you to 
+  - import csv files, leaving only columns: SUKUP,IKA, TMPKOODI, KOODI1, lahtopvm, tnro, PALTU, KOKU 
+  - Adds ID column from lahtopaiva and tnro
+  - Adds "year" column
 }
 \examples{
 Hilmo_import_sav()
