@@ -15,7 +15,7 @@ Hilmo_import_sav <- function(filename) {
   data <- read_sav(filename)
 
   data %>%
-    select(SUKUP,IKA, TMPKOODI, KOODI1, lahtopvm, tnro) %>%
+    select(SUKUP,IKA, TMPKOODI, KOODI1, lahtopvm, tnro, PALTU, KOKU) %>%
     mutate(ID=rep(NA)) %>%
     unite(ID, tnro, lahtopvm, sep="", remove=F) %>%
     mutate(ID = str_remove(ID,"/")) %>%
@@ -23,6 +23,6 @@ Hilmo_import_sav <- function(filename) {
     mutate(lpvm=as.Date(lahtopvm, format= "%d/%m/%Y")) %>%
     separate(lahtopvm, into=c("day","month","year"), sep="/") %>%
     select(-day, -month) %>%
-    select(ID, tnro, SUKUP, IKA, TMPKOODI, KOODI1, lpvm, year)
+    select(ID, tnro, SUKUP, IKA, PALTU, KOKU, TMPKOODI, KOODI1, lpvm, year)
 
 }
