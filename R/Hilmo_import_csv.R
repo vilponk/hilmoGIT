@@ -19,7 +19,7 @@ Hilmo_import_csv <- function(filename) {
     select(SUKUP,IKA, TMPKOODI, KOODI1, lahtopvm, tulopvm, tnro, PALTU, KOKU) %>%
     mutate(ID=rep(NA)) %>%
     unite(ID, tnro, lahtopvm, sep="", remove=F) %>%
-    mutate(ID = str_replace(ID,"/", "")) %>%
+    mutate(ID = str_replace_all(ID,"/", "")) %>%
     mutate(pvm=as.Date(tulopvm, format= "%d/%m/%Y")) %>%
     separate(tulopvm, into=c("day","month","year"), sep="/") %>%
     select(-day, -month) %>%
