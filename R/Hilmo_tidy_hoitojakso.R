@@ -18,12 +18,12 @@ Hilmo_tidy_hoitojakso <- function(dataname) {
               IKA=toString(unique(IKA)),
               TMPKOODI=toString(unique(TMPKOODI)),
               KOODI1 = toString(unique(KOODI1)),
-              lpvm= toString(unique(lpvm)),
+              pvm= toString(unique(pvm)),
               year= toString(unique(year)),
               incluusio= toString(unique(incluusio))) %>%
     mutate(SUKUP=factor(SUKUP, levels=c(1,2), labels=c("Male", "Female")),
            IKA=as.numeric(IKA),
-           lpvm=as.Date(lpvm, format= "%Y-%m-%d"),
+           pvm=as.Date(pvm, format= "%Y-%m-%d"),
            year=as.factor(year))
 
 
