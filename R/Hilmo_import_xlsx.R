@@ -17,15 +17,13 @@ Hilmo_import_xlsx <- function(filename) {
 
   data <- read_excel(filename)
 
-  data %>%
-    select(SUKUP,IKA, TMPKOODI, KOODI1, lahtopvm, tnro, PALTU, PALTUTAR, KOKU) %>%
+    data %>%
+    select(SUKUP,IKA, TMPKOODI, KOODI1, lahtopvm, tulopvm, tnro, PALTU, KOKU) %>%
     mutate(ID=rep(NA)) %>%
     unite(ID, tnro, lahtopvm, sep="", remove=F) %>%
-    mutate(ID = str_remove(ID,"-")) %>%
-    mutate(ID = str_remove(ID,"-")) %>%
-    mutate(lpvm=as.Date(lahtopvm, format= "%Y/%m/%d")) %>%
-    separate(lahtopvm, into=c("year","month","day"), sep="-") %>%
+    mutate(ID = str_replace(ID,"-", "")) %>%
+    mutate(pvm=as.Date(tulopvm, format= "%d/%m/%Y")) %>%
+    separate(tulopvm, into=c("day","month","year"), sep="/") %>%
     select(-day, -month) %>%
-    select(ID, tnro, SUKUP, IKA, PALTU, PALTUTAR, KOKU, TMPKOODI, KOODI1, lpvm, year)
-
+    select(ID, tnro, SUKUP, IKA, PALTU, KOKU, TMPKOODI, KOODI1, pvm, year)
 }
