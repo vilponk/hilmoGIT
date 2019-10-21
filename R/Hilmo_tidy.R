@@ -17,7 +17,7 @@ Hilmo_tidy <- function(dataname) {
               IKA=paste(IKA, collapse=" - "),
               TMPKOODI=paste(TMPKOODI, collapse=" - "),
               KOODI1 = paste(KOODI1, collapse=" - "),
-              lpvm=paste(lpvm, collapse=" - "),
+              pvm=paste(pvm, collapse=" - "),
               year=paste(year, collapse=" - "),
               incluusio=paste(incluusio, collapse=" - "))
 
