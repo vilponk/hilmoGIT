@@ -16,15 +16,16 @@ Hilmo_tidy_hoitojakso <- function(dataname) {
     summarise(tnro=toString(unique(tnro)),
               SUKUP=toString(unique(SUKUP)),
               IKA=toString(unique(IKA)),
-              TMPKOODI=toString(unique(TMPKOODI)),
-              KOODI1 = toString(unique(KOODI1)),
+              TMPKOODI=list(unique(TMPKOODI)),
+              KOODI1 = list(unique(KOODI1)),
               pvm= toString(unique(pvm)),
               year= toString(unique(year)),
               incluusio= toString(unique(incluusio))) %>%
     mutate(SUKUP=factor(SUKUP, levels=c(1,2), labels=c("Male", "Female")),
            IKA=as.numeric(IKA),
            pvm=as.Date(pvm, format= "%Y-%m-%d"),
-           year=as.factor(year))
+           year=as.factor(year)) %>% 
+  arrange(pvm)
 
 
 }
