@@ -16,6 +16,7 @@ Hilmo_tidy_hoitojakso <- function(dataname) {
     summarise(tnro=toString(unique(tnro)),
               SUKUP=toString(unique(SUKUP)),
               IKA=toString(unique(IKA)),
+              KOKU=toString(unique(KOKU)),
               TMPKOODI=list(unique(TMPKOODI)),
               KOODI1 = list(unique(KOODI1)),
               pvm= toString(unique(pvm)),
@@ -24,7 +25,7 @@ Hilmo_tidy_hoitojakso <- function(dataname) {
     mutate(SUKUP=factor(SUKUP, levels=c(1,2), labels=c("Male", "Female")),
            IKA=as.numeric(IKA),
            pvm=as.Date(pvm, format= "%Y-%m-%d"),
-           year=as.factor(year)) %>% 
+           year=as.factor(year)) %>%
   arrange(pvm)
 
 
