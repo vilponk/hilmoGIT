@@ -19,7 +19,7 @@
 datecalc <- function(df, x) {
 
 data1 <- df %>%
-  mutate(oper_seq = map(df_tidy$incluusio, match, table=c("Levy"), nomatch=2))
+  mutate(oper_seq = map(df$incluusio, match, table=c("Levy"), nomatch=2))
 
 data1$levy_pos <- rep(NA)
 data1$poisto_p <- rep(NA)
