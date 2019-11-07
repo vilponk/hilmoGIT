@@ -16,12 +16,14 @@ Hilmo_tidy <- function(dataname) {
     group_by(tnro) %>%
     summarise(SUKUP=toString(unique(SUKUP)),
               IKA=list(IKA),
+              KOKU=toString(unique(KOKU)),
               TMPKOODI=list(TMPKOODI),
               KOODI1 = list(KOODI1),
               pvm=toString(as.Date(pvm, format= "%Y-%m-%d")),
               year=list(toString(year)),
-              incluusio=list(incluusio)) %>%
-  mutate(hoitojakso_n = lengths(incluusio))
+              incluusio=list(toString(incluusio))) %>%
+  mutate(hoitojakso_n = lengths(incluusio),
+         KOKU=as.numeric(KOKU))
 
 
 }
