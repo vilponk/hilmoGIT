@@ -1,0 +1,18 @@
+---
+title: "package_koodit"
+author: "Ville Ponkilainen"
+date: "31 10 2019"
+output: html_document
+---
+
+# Kun haluaa lisätä funktion pakettiin niin käyttää seuraavaa
+```{r}
+library("devtools")
+devtools::install_github("klutometis/roxygen")
+library(roxygen2)
+
+setwd("./hilmoGIT")
+document()
+```
+
+# Lisää tähän koodiin vielä funktio joka valitsee oikean iän primaaritoimenpiteen perusteella.
